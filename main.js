@@ -1,17 +1,18 @@
-import { King } from './MallardDuck.js';
-import { Queen } from './FlyWithWings.js';
-import { knight } from './Quack.js';
-import { Troll } from './FlyWithBalloon.js';
-import { MuteQuack } from './MuteQuack.js';
+import { King } from './King.js';
+import { Run } from './Run.js';
+import { Walk } from './Walk.js';
+import { BowAndArrow } from './BowAndArrow.js';
+import { Knife } from './Knife.js';
 
-const mallard = new MallardDuck(new FlyWithWings(), new Quack());
-console.log(mallard.display());
-console.log(mallard.performFly());
-console.log(mallard.performQuack());
 
-mallard.setFlyBehavior(new FlyWithBalloon());
-mallard.setQuackBehavior(new MuteQuack());
+const rey = new King(new Run(), new  BowAndArrow());
+console.log(rey.display());
+console.log(rey.performMove());
+console.log(rey.performAttack());
+
+rey.setMoveBehavior(new Walk());
+rey.setWeaponBehavior(new Knife());
 
 console.log("\nDespués de cambiar comportamientos:");
-console.log(mallard.performFly());
-console.log(mallard.performQuack());
+console.log(rey.performMove());
+console.log(rey.performAttack());
